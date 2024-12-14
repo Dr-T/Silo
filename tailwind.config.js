@@ -1,5 +1,5 @@
-import { addIconSelectors } from "@iconify/tailwind"
-const { iconsPlugin, getIconCollections } = require("@egoist/tailwindcss-icons")
+import { addIconSelectors } from "@iconify/tailwind";
+import { iconsPlugin, getIconCollections } from "@egoist/tailwindcss-icons";
 
 
 const _round = (num) =>
@@ -241,7 +241,7 @@ export default {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    import('@tailwindcss/typography'),
     addIconSelectors(["ri", "mingcute", "logos"]),
     iconsPlugin({
       // Select the icon collections you want to use
