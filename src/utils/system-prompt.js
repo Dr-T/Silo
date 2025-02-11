@@ -6,8 +6,8 @@ import { useMemo } from 'react';
 import ImgFeynman from "@src/assets/img/preset/feynman.png"
 import ImgTranslator from "@src/assets/img/preset/translator.png"
 import ImgNon from "@src/assets/img/non.svg";
+import ImgDeepSeek from "@src/assets/img/models/deepseek-ai.svg"
 import { LOCAL_STORAGE_KEY } from './types';
-import { useRef } from 'react';
 
 const presetOf = (
   id,

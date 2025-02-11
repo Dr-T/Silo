@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import UserMessage from '../UserMessage';
 import AiMessage from '../AiMessage';
 import ChatHolder from '../ChatHolder';
-import { useActiveChatsMessages } from '@src/utils/chat';
+import { getChatMessageInfo, useActiveChatsMessages } from '@src/utils/chat';
 import { useAutoScrollToBottomRef } from '@src/utils/use';
 
 export default function ({ loading }) {
@@ -40,7 +40,8 @@ export default function ({ loading }) {
               key={`${item.chatId}-${key}`}
               chatId={item.chatId}
               model={key}
-              showModelName
+              info={getChatMessageInfo(key, item.chatId)}
+              mobile
               isLast={index === messages.length - 1}
               content={item.ai[key]}
             />

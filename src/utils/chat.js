@@ -135,8 +135,6 @@ async function _streamChat (chat, newMessage, systemPrompt) {
     _onThinking(content)
   }
   const _onChunk = (content) => {
-    console.log(content);
-
     // 阿里国际站团队推出的 Marco-o1 模型，可以模拟 o1 的思考过程。实现方式是使用两个标签 <Thought> 和 <Output> 包裹内容。
     if (chat.messages[chatId].trim().startsWith('<Thought>')) {
       isThoughtStart = true;
@@ -155,6 +153,9 @@ async function _streamChat (chat, newMessage, systemPrompt) {
         isThoughtEnd = true;
         const [thought, _output] = currentThought.split('</Thought>');
         thoughts[chatId][model] = thought;
+        if (!thought.trim()) {
+          delete thoughts[chatId][model]
+        }
         content = _output;
       } else {
         content = ''
