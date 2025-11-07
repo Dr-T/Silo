@@ -1,7 +1,7 @@
 {
   "name": "silo",
   "private": true,
-  "version": "1.8.8",
+  "version": "1.8.12",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -64,6 +64,14 @@
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.1",
     "vite-plugin-pwa": "^0.21.1",
-    "wxt": "^0.19.7"
+    "wxt": "0.20.9"
+  },
+  "overrides": {
+    "@wxt-dev/storage": "1.2.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@wxt-dev/storage": "1.2.0"
+    }
   }
 }
